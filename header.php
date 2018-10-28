@@ -10,8 +10,6 @@
 				<li><a href= "location.php">Your Location</a></li>
 				<li><a href= "home">Test2</a></li>
 				<li><a href= "home">Test3</a></li>
-				<li><a href= "home">Home</a></li>
-				<li><a href= "home">Test1</a></li>
 				<li><a href= "home">Test2</a></li>
 				<li class = "login-parrent"><a class = "login-button" onclick="displayLogin()">Login</a>
 					<div id = "login-form">

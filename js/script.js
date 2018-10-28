@@ -24,3 +24,21 @@ function displayMessage() {
         x.style.display = "none";
     }
 }
+
+function PostWindow() {
+    var x = document.getElementById("add-post-window");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function SendMessageWindow() {
+    var x = document.getElementById("send-message");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
