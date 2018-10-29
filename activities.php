@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>
-			Metoo | Location
+			Metoo | Activities
 		</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet"  type="text/css" href="fonts/style.css">
@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<?php include("header.php"); ?>
-		<?php include("content/content-location.php"); ?>
+		<?php include("content/content-activities.php"); ?>
 		<?php include("footer.php"); ?>
 	</body>
 </html>

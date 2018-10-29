@@ -51,3 +51,12 @@ function CloseNotification() {
         x.style.display = "none";
     }
 }
+
+function AddPlace() {
+    var x = document.getElementById("add-place-window");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

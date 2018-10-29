@@ -3,11 +3,12 @@
 		<div class = "menu-icon" onclick="displayMenu()">
 			<span class="icon-menu"></span>
 		</div>
+		<div class = "chat-icon-mobile" onclick="displayMessage()"><span class="icon-bubbles2"></span></div>
 		<div class= "logo">Metoo</div>
 		<nav id = "nav">
 			<ul>
 				<li><a href= "index.php">Home</a></li>
-				<li><a href= "location.php">Your Location</a></li>
+				<li><a href= "activities.php">Your Location</a></li>
 				<li><a href= "edit-profile.php">Edit your profile</a></li>
 				<li><a href= "home">Test3</a></li>
 				<li><a href= "home">Test2</a></li>

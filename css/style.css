@@ -6,7 +6,7 @@ body {
 
 #notification{
 	width: 250px;
-	height: 100px;
+	height: 50px;
 	background: #e0e0e0;
 	position: fixed;
 	left: 20px;
@@ -14,6 +14,7 @@ body {
 	font: 15px;
 	padding: 10px;
 	padding-top: 20px;
+	z-index: 10000;
 }
 
 .notification-close{
@@ -45,6 +46,7 @@ body {
 	right: -10px;
 	padding: 10px;
 	display: none;
+	z-index: 1000;
 }
 
 #login-form input{
@@ -113,6 +115,17 @@ body {
 	font-size: 25px;
 	line-height: 40px;
 	text-align: center;
+	cursor: pointer;
+}
+
+.post-info{
+	float: left;
+	font-size: 15px;
+	background: red%;
+	width: 90%;
+	height: 20px;
+	line-height: 15px;
+	font-weight: bold;
 }
 
 .post-chat-icon:hover{
@@ -122,8 +135,9 @@ body {
 
 /*----------------------------------------------------------------------------------*/
 #send-message{
-	width: 500px;
+	width: 380px;
 	height: 370px;
+	padding: 10px;
 	position: absolute;
 	background-color: #e2e2e2;
 	z-index: 1000;
@@ -139,7 +153,7 @@ body {
 
 #send-message  input[type=submit] {
     width: 100%;
-    background-color: #407c46;
+    background-color: #000;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -175,9 +189,11 @@ body {
 }
 
 .flex-container-card > div{
-	width: 210px;
-	height: 210px;
+	width: 170px;
+	height: 170px;
 	margin: 10px;
+	margin-left: 28px;
+	margin-right: 28px;
 	background-color: #407c46;
 	border-radius: 5px;
 	text-align: center;
@@ -195,20 +211,22 @@ body {
 .add-post-text{
 	font-size: 25px;
 	color: #fff;
-	padding-top: 70px;
+	padding-top: 55px;
 	letter-spacing: 2px;
-	width: 210px;
-	height: 140px;
+	width: 170px;
+	height: 170px;
 }
 
 #add-post-window{
 	position: absolute;
-	height: 280px;
-	width: 450px;
+	height: 300px;
+	width: 380px;
+	padding: 10px;
 	background-color: #efefef;
 	top: 0;
 	left: 0;
 	display: none;
+	z-index: 1000;
 }
 
 #add-post-window textarea{
@@ -219,7 +237,7 @@ body {
 
 #add-post-window input[type=submit] {
     width: 100%;
-    background-color: #407c46;
+    background-color: #000;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -242,11 +260,47 @@ body {
 	color: #7c0000;
 }
 
-.searce-place-text{
+.add-place{
+	position: relative;
+}
+
+.add-place-text{
 	font-size: 25px;
 	color: #fff;
-	margin-top: 85px;
 	letter-spacing: 2px;
+	padding-top: 60px;
+	padding-bottom: 47px;
+}
+
+#add-place-window{
+	height: 200px;
+	width: 380px;
+	padding: 10px;
+	background-color: #e2e2e2;
+	position: absolute;
+	display: none;
+	z-index: 10000;
+	right: 0;
+	top: 0;
+}
+
+.add-place-window-cancel{
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+	font-size: 30px;
+	float: right;
+}
+
+#add-place-window input[type=submit]{
+	background-color: #000;
+}
+
+#add-place-window input[type=submit]:hover{
+	color: #7c0000;
+}
+.add-place-window-cancel:hover{
+	color: #7c0000;
 }
 
 .left input[type=text], select {
@@ -283,12 +337,13 @@ body {
 }
 
 #chat-message{
-	width: 500px;
+	width: 400px;
 	height: 370px;
 	position: absolute;
 	background-color: #e2e2e2;
 	display: none;
 	z-index: 1000;
+	left: 0;
 }
 
 #chat-message textarea{
@@ -298,7 +353,7 @@ body {
 
 #chat-message  input[type=submit] {
     width: 100%;
-    background-color: #407c46;
+    background-color: #000;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -326,6 +381,7 @@ body {
 	color: #7c0000;
 }
 
+/*Desktop=========================================================================================================================*/
 @media screen and (min-width: 960px) {
 	.header{
 		margin: auto;
@@ -434,8 +490,16 @@ body {
 	.menu-icon {
 		display: none;
 	}
-}
 
+	.chat-icon-mobile{
+		display: none;
+	}
+
+	.chat-icon{
+		display: visible;
+	}
+}
+/*Tableta=========================================================================================================================*/
 @media screen and (max-width: 960px) {
 	.header{
 		margin: auto;
@@ -574,8 +638,30 @@ body {
 		padding: 10px;
 		margin: auto;
 	}
-}
 
+	.chat-icon-mobile{
+		position: relative;
+		float: right;
+		margin-top: 30px;
+		margin-right: 20px;
+		font-size: 30px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+
+	.chat-icon-mobile:hover{
+		color: #961A00;
+	}
+
+	.chat-icon{
+		display: none;
+	}
+
+	#chat-message{
+		width: 100%;
+	}
+}
+/*Mobil=========================================================================================================================*/
 @media screen and (max-width: 720px) {
 	.header{
 		margin: auto;
@@ -636,7 +722,6 @@ body {
 
 	#nav{
 		height:100%;
-		width: 0px;
 		float: left;
 		position: absolute;
 		top: 80px;
@@ -689,6 +774,7 @@ body {
 
 	.menu-icon:hover{
 		color: #961A00;
+		cursor: pointer;
 	}
 
 	#login-form{
@@ -704,37 +790,49 @@ body {
 	}
 
 	.flex-container > div{
-		width: 400px;
+		width: 420px;
 		margin: 10px;
 		padding: 10px;
 		margin: auto;
 	}
 
 	.flex-container-card > div{
-		width: 180px;
-		height: 180px;
+		width: 170px;
+		height: 170px;
 		margin: 10px;
+		margin-left: 20px;
+		margin-right: 20px;
 		background-color: #407c46;
 		border-radius: 5px;
 		text-align: center;
 		cursor: pointer;
 	}
 
-	.add-post-text{
-		font-size: 25px;
-		color: #fff;
-		padding-top: 60px;
-		letter-spacing: 2px;
-		width: 210px;
-		height: 140px;
-		text-align: center;
+	.chat-icon-mobile{
+		position: relative;
+		float: right;
+		margin-top: 30px;
+		margin-right: 20px;
+		font-size: 30px;
+		line-height: 70px;
+		cursor: pointer;
 	}
 
-	.searce-place-text{
-		font-size: 25px;
-		color: #fff;
-		margin-top: 70px;
-		letter-spacing: 2px;
+	.chat-icon{
+		display: none;
+	}
+
+	.chat-icon-mobile:hover{
+		color: #961A00;
+	}
+
+	.flex-container{
+		position: relative;
+	}
+
+	#chat-message{
+		position: absolute;
+		width: 100%;
 	}
 }
 
