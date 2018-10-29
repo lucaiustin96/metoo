@@ -1,0 +1,57 @@
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit], input[type=button] {
+    background-color: #407c46;
+    color: white;
+    padding: 0.875em 1.25em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+input[type=submit]:hover, input[type=button]:hover {
+    background-color: #45a049;
+}
+.completeFormL {
+    margin: auto;
+}
+.widthForm {
+    width: 50%;
+}
+
+@media (max-width: 992px) {
+   .widthForm {
+     width: 75%;
+   }
+}
+@media (max-width: 670px) {
+    .widthForm {
+        width: 95%;
+   }
+}
+
+.fontTypeL {
+    font-size: 1.25em;
+    text-align: center;
+}
+.displayBlockL {
+    display: block;
+}
+.pad-top-bot-30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.mrg-top-bot-20 {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
