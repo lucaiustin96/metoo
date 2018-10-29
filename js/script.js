@@ -42,3 +42,12 @@ function SendMessageWindow() {
         x.style.display = "none";
     }
 }
+
+function CloseNotification() {
+    var x = document.getElementById("notification");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

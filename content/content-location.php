@@ -19,6 +19,14 @@
 						<option value="canada">Parcul Copou</option>
 						<option value="usa">Palas</option>
 					</select>
+
+					<label for="country">Your abilities</label>
+					<select id="country" name="country">
+						<option value="australia">PHP</option>
+						<option value="canada">Design</option>
+						<option value="usa">Javascript</option>
+					</select>
+
 					<input type="submit" value="Submit">
 				</form>
 				<div class = "flex-container-card">
