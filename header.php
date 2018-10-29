@@ -8,7 +8,7 @@
 			<ul>
 				<li><a href= "index.php">Home</a></li>
 				<li><a href= "location.php">Your Location</a></li>
-				<li><a href= "home">Test2</a></li>
+				<li><a href= "edit-profile.php">Edit your profile</a></li>
 				<li><a href= "home">Test3</a></li>
 				<li><a href= "home">Test2</a></li>
 				<li class = "login-parrent"><a class = "login-button" onclick="displayLogin()">Login</a>
