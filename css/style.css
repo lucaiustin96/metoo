@@ -30,9 +30,6 @@ body {
 
 .section-info{
 	background: url(../img/wallpaper.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
 	background-size: cover;
   	text-align: center;
 }
@@ -109,8 +106,8 @@ body {
 	width: 40px;
 	height: 40px;
 	position: absolute;
-	right: 5;
-	top: 5;
+	right: 0;
+	top: 0;
 	font-size: 25px;
 	line-height: 40px;
 	text-align: center;
@@ -120,14 +117,13 @@ body {
 .post-info{
 	float: left;
 	font-size: 15px;
-	background: red%;
 	width: 90%;
 	height: 20px;
 	line-height: 15px;
 	font-weight: bold;
 }
 
-.post-chat-icon:hover{
+.post-chat-icon:hover {
 	color: #fff;
 	cursor: pointer;
 }
@@ -502,7 +498,7 @@ body {
 	}
 
 	.chat-icon{
-		display: visible;
+		display: block;
 	}
 }
 /*Tableta=========================================================================================================================*/
@@ -577,7 +573,7 @@ body {
 		float: left;
 		position: absolute;
 		top: 80px;
-		right: 250;		
+		right: 250px;		
 		display: none;
 		z-index: 100000;
 	}
