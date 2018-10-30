@@ -29,7 +29,7 @@
 						<div id = "add-post-window">
 							<div class = "add-post-cancel"  onclick="PostWindow()">X</div>
 							<form action="/action_page.php">
-							    <textarea ></textarea>
+							    <textarea></textarea>
 							    <input type="submit" value="Send">
 							 </form>
 						</div>
@@ -40,7 +40,7 @@
 						<div id = "add-place-window">
 							<div class = "add-place-window-cancel" onclick = "AddPlace()">X</div>
 							<form action="/action_page.php">
-								<input type="text" name="firstname" value="First Name">
+								<input type="text" name="newLocation" placeholder="New location">
 								<input type="submit" value="Add Place">
 							</form> 
 						</div>
