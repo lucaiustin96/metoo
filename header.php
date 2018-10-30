@@ -10,7 +10,7 @@
 				<div id = "nav">
 					<ul>
 						<li><a href= "index.php">Home</a></li>
-						<li><a href= "activities.php">Your Location</a></li>
+						<li><a href= "activities.php">Your activities</a></li>
 						<li><a href= "edit-profile.php">Edit profile</a></li>
 						<li><a href= "top-locations.php">Top Locations</a></li>
 						<li><a href= "raport.html">Raport</a></li>				
