@@ -649,12 +649,11 @@ body {
 	}
 
 	.chat-icon-mobile{
-		position: relative;
+		position: absolute;
 		float: right;
-		margin-top: 30px;
-		margin-right: 20px;
+		right: 50px;
 		font-size: 30px;
-		line-height: 70px;
+		line-height: 80px;
 		cursor: pointer;
 	}
 
@@ -817,12 +816,11 @@ body {
 	}
 
 	.chat-icon-mobile{
-		position: relative;
+		position: absolute;
 		float: right;
-		margin-top: 30px;
-		margin-right: 20px;
+		right: 50px;
 		font-size: 30px;
-		line-height: 70px;
+		line-height: 80px;
 		cursor: pointer;
 	}
 
@@ -840,6 +838,6 @@ body {
 
 	#chat-message{
 		position: absolute;
-		width: 100%;
+		width: 400px;
 	}
 }
