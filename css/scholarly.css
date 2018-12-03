@@ -84,6 +84,10 @@ code, pre {
   font-family: "Roboto Mono", monospace;
 }
 
+span {
+  display: block;
+}
+
 /* special boxes */
 p.issue {
   border-left: 3px solid red;
@@ -99,4 +103,11 @@ p.issue {
   body {
     margin: 0 2em;
   }
+}
+
+.img-plan {
+  display: block;
+  margin: 10px auto;
+  width: 500px;
+  height: 600px;
 }

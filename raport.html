@@ -18,6 +18,15 @@
                 <p role="doc-subtitle" property="schema:alternateName">
                     3. Maniera de folosire a sistemului de management al codului-sursa
                 </p>
+                <p role="doc-subtitle" property="schema:alternateName">
+                    4. Informatii privind etapele intermediare ale dezvoltarii proiectului
+                </p>
+                <p role="doc-subtitle" property="schema:alternateName">
+                    5. Detalii referitoare la modelarea datelor
+                </p>
+                <p role="doc-subtitle" property="schema:alternateName">
+                    6. Solutii de stocare disponibile la nivel de client
+                </p>
             </header>
             <meta property="schema:accessibilityFeature" content="alternativeText">
             <meta property="schema:accessibilityFeature" content="MathML">
@@ -197,6 +206,71 @@
                         </ul>
                     </li>
                 </ul>
+                <meta property="schema:accessibilityFeature" content="alternativeText">
+                <meta property="schema:accessibilityFeature" content="MathML">
+                <meta property="schema:accessibilityHazard" content="noFlashingHazard">
+            </article>
+        </section>
+        <section typeof="sa:AuthorsList">
+            <h3>4. Informatii privind etapele intermediare ale dezvoltarii proiectului</h3>
+            <article resource="#" typeof="schema:ScholarlyArticle">
+                <header>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                        Prima etapa in dezvoltarea proiectului a constat in intalniri ale membrilor echipei, unde am discutat
+                        si am facut scheme ale paginilor pe care urma sa le realizam. In urma intalnirilor, am creat urmatorul plan:
+                    </span>
+                    <img class="img-plan" src="./img/plan1.jpg" alt="Plan 1"/>
+                    <img class="img-plan" src="./img/plan2.jpg" alt="Plan 2"/>
+                    <span role="doc-acknowledgments" property="schema:alternateName">                        
+                        Am inceput sa dezvoltam fiecare pagina in parte si am implementat interfata proiectului.
+                    </span>
+                    <span role="doc-acknowledgments" property="schema:alternateName">                        
+                        A doua etapa in dezvoltarea proiectului a constat in informarea si documentarea fiecarui membru al echipei in 
+                        privinta tehnologiilor pe care urmeaza sa le folosim pentru a finaliza proiectul. 
+                    </span>
+                    <span role="doc-acknowledgments" property="schema:alternateName">                        
+                        Etapa a treia presupune aplicarea tuturor informatiilor pe care le-am cules in etapa a doua, dar si cele
+                        dobandite in timpul cursului si seminarului pentru a duce la final proiectul. 
+                    </span>
+                </header>
+                <meta property="schema:accessibilityFeature" content="alternativeText">
+                <meta property="schema:accessibilityFeature" content="MathML">
+                <meta property="schema:accessibilityHazard" content="noFlashingHazard">
+            </article>
+        </section>
+        <section typeof="sa:AuthorsList">
+            <h3>5. Detalii referitoare la modelarea datelor proprii</h3>
+            <article resource="#" typeof="schema:ScholarlyArticle">
+                <header>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                    text aici
+                    </span>
+                </header>
+                <meta property="schema:accessibilityFeature" content="alternativeText">
+                <meta property="schema:accessibilityFeature" content="MathML">
+                <meta property="schema:accessibilityHazard" content="noFlashingHazard">
+            </article>
+        </section>
+        <section typeof="sa:AuthorsList">
+            <h3>6. Solutii de stocare disponibile la nivel de client</h3>
+            <article resource="#" typeof="schema:ScholarlyArticle">
+                <header>
+                    <h5>i. Service Worker</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                            Vom implementa un service worker in scopul utilizarii aplicatiei atat online, cat si offline. Acesta
+                            se va instala automat pe dispozitivul clientului la prima accesare a aplicatiei. Toate informatiile vor fi
+                            stocate in cache, astfel ca dupa ce utilizatorul a intrat cel putin o data in site, acesta va putea accesa
+                            aplicatia si fara a avea acces la Internet.
+                    </span>
+                    <h5>ii. Web Storage</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                            Web Storage ofera doua modalitati de stocare diferite: Local Storage si Session Storage. Acesta difera in
+                            functie de domeniu si de durata de viata. Session storage mentine stocarea datelor pe durata sesiunii de pagina,
+                            adica atat timp cat browserul este deschis, inclusiv reincarcarea si restabilirea paginilor. Local Storage
+                            face acelasi lucru pe care il face Session Storage cu diferenta ca stocarea datelor persista chiar si dupa
+                            ce browserul a fost inchis si redeschis. Vom utiliza Local Storage pentru a stoca paginile aplicatiei.
+                    </span>                          
+                </header>
                 <meta property="schema:accessibilityFeature" content="alternativeText">
                 <meta property="schema:accessibilityFeature" content="MathML">
                 <meta property="schema:accessibilityHazard" content="noFlashingHazard">
