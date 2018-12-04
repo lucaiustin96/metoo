@@ -240,12 +240,74 @@
             </article>
         </section>
         <section typeof="sa:AuthorsList">
-            <h3>5. Detalii referitoare la modelarea datelor proprii</h3>
+            <h3>5. Descrierea diagramelor si a bazei de date</h3>
             <article resource="#" typeof="schema:ScholarlyArticle">
                 <header>
+					<h5>Diagrama de deployment:</h5>
                     <span role="doc-acknowledgments" property="schema:alternateName">
-                    text aici
-                    </span>
+						In nodul cu baza de date se gasesc tabelele cu userii, locatiile si postarile utilizatorilor iar la artifact se regaseste codul care se ocupa de logica paginii Server Logic. Pe langa nodul care contine baza de date, mai exista un nod care apartine serverului de la Facebook. El contine un artifact in care se afla Facebook API.
+					</span>
+					<h5>Diagrame de clase:</h5> 
+					<span role="doc-acknowledgments" property="schema:alternateName">
+						Pentru fiecare functionalitate a site-ului exista cate o clasa (Login, Sign up, AddPlace, AppPost, DisplayTopLocations) pe backend in care sa se proceseze datele inainte sa fie inserate in baza de date. In acest sens, se trimit formulare din js catre clasa php, iar de acolo se insereaza in baza de date.
+					</span>
+					
+					<h5>Diagrama use case:</h5>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+						Utilizatorul are posibilitatea de a se loga si de a face sign up  prin intermediul Facebook API. Apoi datele introduse in momentul editarii profilului, adaugarii postarilor, adaugarii locatiilor, vizualizarii postarilor, vizualizarii top locations, trimiterii de mesaje, se salveaza in baza de date. Mesajele si notificarile sunt transmise userului 2 de catre userul 1.
+					</span>
+					<h5>Baza de date</h5>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+						Utilizatorul va fi identificat printr-un id unic care va fi obtinut de la Facebook API.
+					</span>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+						Baza noastra de date va contine 2 tabele: tabelul in care vor fi salvate locatiile si tabelul in care vor fi salvate postarile.
+					</span>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+						Tabelul locatii va contine un ID care este cheie primara, locatia salvata sub forma unui sir de caractere si va contine o coloana in care va fi salvat ID-ul utilizatorului care a introdus locatia.
+					</span>
+					<span role="doc-acknowledgments" property="schema:alternateName">					
+						Tabelul postari va contine un ID unic care este cheie primara, continutul postarii salvat sub forma unui sir de caractere, ID-ul utilizatorului obtinut de la Facebook API si ID-ul locatiei postarii.
+					 </span>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+						Am ales sa nu salvam conversatiile in baza de date deoarece o baza de date SQL nu ar fi potrivita.
+					</span>
+                </header>
+                <meta property="schema:accessibilityFeature" content="alternativeText">
+                <meta property="schema:accessibilityFeature" content="MathML">
+                <meta property="schema:accessibilityHazard" content="noFlashingHazard">
+            </article>
+        </section>
+		<section typeof="sa:AuthorsList">
+            <h3>6. Detalii referitoare la modelarea datelor proprii</h3>
+            <article resource="#" typeof="schema:ScholarlyArticle">
+                <header>
+					<h5>Modelarea datelor proprii</h5>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+					Locatiile si postarile sunt introduse de catre utilizator dupa ce acesta s-a logat. Datele sunt transmise prin intermediul unui formular catre o pagina PHP unde sunt prelucrate si securizate iar mai apoi sunt transmise catre baza de date.
+					</span>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+					Pentru editarea profilului se foloseste tot un formular care actualizeaza sau adauga date in baza de date.
+					</span>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+					Pagina ofera posibiliatea vizualizarii celor mai vizitate locatii (Top Locations). Pentru a realiza aceasta functionalitate, este nevoie doar de interogarea bazei de date si de returnarea rezultatelor.
+					</span>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+					Aplicatia ofera posibilitatea initializarii unei conversatii intre 2 utilizatori. Coversaatia va fi salvata atat timp cat utilizatorii vor fi logati. In momentul delogarii, conversatia se sterge.
+					</span>
+					<h5>Facebook API</h5>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+					Inainte de a folosi Facebook API, vom avea nevoie de un Facebook App ID.
+					</span>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+					Pe pagina de la Facebook API trebuie sa introducem un URL catre care utiizatorul va fi redirectionat dupa ce se logheaza. 
+					</span>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+					In aplicatia noastra trebuie sa introducem fisierul de la Facebook SDK.JS. In paginile noastre trebuie sa verificam daca utilizatorul este logat sau nu. In cazul in care utilizatorul nu este logat, Facebook API va deschide o fereastra in care utilizatorul isi va putea introduce datele.
+					</span>
+					<span role="doc-acknowledgments" property="schema:alternateName">
+					De asemenea, Facebook API va contine un script care va oferi utilizatorului posibilitatea de a se deloga.
+					</span>
                 </header>
                 <meta property="schema:accessibilityFeature" content="alternativeText">
                 <meta property="schema:accessibilityFeature" content="MathML">
@@ -253,7 +315,7 @@
             </article>
         </section>
         <section typeof="sa:AuthorsList">
-            <h3>6. Solutii de stocare disponibile la nivel de client</h3>
+            <h3>7 Solutii de stocare disponibile la nivel de client</h3>
             <article resource="#" typeof="schema:ScholarlyArticle">
                 <header>
                     <h5>i. Service Worker</h5>
