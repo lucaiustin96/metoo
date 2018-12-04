@@ -1,62 +1,62 @@
 function displayMenu() {
-    var x = document.getElementById("nav");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    var nav = document.getElementById("nav");
+    if (nav.style.display === "none") {
+        nav.style.display = "block";
     } else {
-        x.style.display = "none";
+        nav.style.display = "none";
     }
 }
 
 function displayLogin() {
-    var x = document.getElementById("login-form");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    var loginForm = document.getElementById("login-form");
+    if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
     } else {
-        x.style.display = "none";
+        loginForm.style.display = "none";
     }
 }
 
 function displayMessage() {
-    var x = document.getElementById("chat-message");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    var chat = document.getElementById("chat-message");
+    if (chat.style.display === "none") {
+        chat.style.display = "block";
     } else {
-        x.style.display = "none";
+        chat.style.display = "none";
     }
 }
 
-function PostWindow() {
-    var x = document.getElementById("add-post-window");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+function postWindow() {
+    var postWindow = document.getElementById("add-post-window");
+    if (postWindow.style.display === "none") {
+        postWindow.style.display = "block";
     } else {
-        x.style.display = "none";
+        postWindow.style.display = "none";
     }
 }
 
-function SendMessageWindow() {
-    var x = document.getElementById("send-message");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+function sendMessageWindow() {
+    var messageWindow = document.getElementById("send-message");
+    if (messageWindow.style.display === "none") {
+        messageWindow.style.display = "block";
     } else {
-        x.style.display = "none";
+        messageWindow.style.display = "none";
     }
 }
 
-function CloseNotification() {
-    var x = document.getElementById("notification");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+function closeNotification() {
+    var notification = document.getElementById("notification");
+    if (notification.style.display === "none") {
+        notification.style.display = "block";
     } else {
-        x.style.display = "none";
+        notification.style.display = "none";
     }
 }
 
-function AddPlace() {
-    var x = document.getElementById("add-place-window");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+function addPlace() {
+    var placeWindow = document.getElementById("add-place-window");
+    if (placeWindow.style.display === "none") {
+        placeWindow.style.display = "block";
     } else {
-        x.style.display = "none";
+        placeWindow.style.display = "none";
     }
 }
