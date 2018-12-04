@@ -841,3 +841,12 @@ body {
 		width: 400px;
 	}
 }
+.text-center {
+	text-align: center;
+}
+.mrg-none {
+	margin: 0;
+}
+.pad-top-20 {
+	padding-top: 20px;
+}

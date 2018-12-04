@@ -1,6 +1,6 @@
-<article class="article-wrapper">
+<div class="article-wrapper">
     <section class="section-content">
-        <h1 class="fontTypeL"> Top 4 locations </h1>
+        <h2 class="fontTypeL"> Top 4 locations </h2>
         <div class="locations">
             <div class="location-item">
                 <p class="location-name"> Biblioteca Centrala Universitara </p>
@@ -20,4 +20,4 @@
             </div>
         </div>
     </section>
-</article>
+</div>

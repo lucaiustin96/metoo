@@ -1,4 +1,4 @@
-<article class="article-wrapper">
+<div class="article-wrapper">
     <section class="section-content">
         <h3 class="fontTypeL pad-top-bot-30"> Edit your profile </h3>
         <form class="completeFormL widthForm">
@@ -18,4 +18,4 @@
             <input type="button" value="Submit" class="displayBlockL submit-button mrg-top-bot-20" id="submitForm">
         </form>
     </section>
-</article>
+</div>
