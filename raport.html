@@ -221,6 +221,7 @@
                     <div class="imgs">
                         <img class="img-plan" src="./img/plan1.jpg" alt="Plan 1"/>
                         <img class="img-plan" src="./img/plan2.jpg" alt="Plan 2"/>
+                        <img class="img-plan" src="./img/Untitled.png" alt="pallas"/>
                     </div>
                     <span role="doc-acknowledgments" property="schema:alternateName">                        
                         Am inceput sa dezvoltam fiecare pagina in parte si am implementat interfata proiectului.
@@ -245,7 +246,7 @@
                 <header>
 					<h5>Diagrama de deployment:</h5>
                     <span role="doc-acknowledgments" property="schema:alternateName">
-						In nodul cu baza de date se gasesc tabelele cu userii, locatiile si postarile utilizatorilor iar la artifact se regaseste codul care se ocupa de logica paginii Server Logic. Pe langa nodul care contine baza de date, mai exista un nod care apartine serverului de la Facebook. El contine un artifact in care se afla Facebook API.
+						In nodul cu baza de date se gasesc tabelele cu userii, locatiile si postarile utilizatorilor iar la artifact se regaseste codul care se ocupa de logica paginii(Server Logic). Pe langa nodul care contine baza de date, mai exista un nod care apartine serverului de la Facebook. El contine un artifact in care se afla Facebook API.
 					</span>
 					<h5>Diagrame de clase:</h5> 
 					<span role="doc-acknowledgments" property="schema:alternateName">
@@ -308,6 +309,11 @@
 					<span role="doc-acknowledgments" property="schema:alternateName">
 					De asemenea, Facebook API va contine un script care va oferi utilizatorului posibilitatea de a se deloga.
 					</span>
+                    <h5>Scheme de modelare a microdatelor folosind HTML5</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                        Deoarece majoritatea functionalitatilor oferite de aplicatia noastra nu sunt accesibile decat daca utilizatorul este logat, schemele de microdate nu sunt folosite foarte mult. Singura functionalitate care le foloseste este cea care afiseaza topul locatiilor. Pentru aceasta vom folosit itemtype ="http://schema.org/Place", iar fiecare locatie din lista va folosi proprietatea itemprop="name" pentru a ajuta la recunoasterea mai usoara a locatiilor de catre motoarele de cautare.
+                    </span>
+
                 </header>
                 <meta property="schema:accessibilityFeature" content="alternativeText">
                 <meta property="schema:accessibilityFeature" content="MathML">
