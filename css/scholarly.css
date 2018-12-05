@@ -1,6 +1,6 @@
 
-@import "../fonts/roboto.css";
-@import "../fonts/roboto-mono.css";
+/* @import "../fonts/roboto.css";
+@import "../fonts/roboto-mono.css"; */
 
 /*
   XXX
@@ -118,4 +118,8 @@ p.issue {
     width: 400px;
     height: 500px;
   }
+}.img-plan--third {
+  display: block;
+  margin: 10px auto;
+  width: 45%;
 }
