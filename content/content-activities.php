@@ -7,12 +7,13 @@
 		<h3 class="text-center mrg-none pad-top-20">Your activities</h3>
 		<div class= "section-content">
 			<div class ="flex-container">
-				<div id = "chat-message">
-					<div class = "chat-close" onclick="displayMessage()">X</div>
-					<form action="/action_page.php">
-						<textarea ></textarea>
-						<input type="submit" value="Send">
-						</form>
+				<div onload="init()" id = "chat-message">
+					<h3>WebSocket Test</h3>
+			        <div id="log"></div>
+			        <label>Message <input id="msg" type="text" onkeypress="onkey(event)"/></label>
+			        <button onclick="send()">Send</button>
+			        <button onclick="quit()">Quit</button>
+			        <div>Server will echo your response!</div>	
 				</div>
 				<div class="chat-icon" onclick="displayMessage()"><span class="icon-bubbles2"></span></div>
 

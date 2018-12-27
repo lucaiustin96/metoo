@@ -4,6 +4,9 @@ body {
 	font-family: 'Muli', sans-serif;
 }
 
+#log {width:440px; height:200px; border:1px solid #7F9DB9; overflow:auto;}
+#msg {width:330px;}
+
 #notification{
 	width: 250px;
 	height: 50px;

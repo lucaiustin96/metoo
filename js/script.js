@@ -1,3 +1,55 @@
+var socket;
+function createSocket(host) {
+    if ('WebSocket' in window)
+        return new WebSocket(host);
+    else if ('MozWebSocket' in window)
+        return new MozWebSocket(host);
+    throw new Error("No web socket support in browser!");
+}
+function init() {
+    var host = "ws://localhost:12345/chat";
+    try {
+        socket = createSocket(host);
+        log('WebSocket - status ' + socket.readyState);
+        socket.onopen = function(msg) {
+            log("Welcome - status " + this.readyState);
+            socket.send("test122334");
+        };
+        socket.onmessage = function(msg) {
+            log(msg.data);
+        };
+        socket.onclose = function(msg) {
+            log("Disconnected - status " + this.readyState);
+        };
+    }
+    catch (ex) {
+        log(ex);
+    }
+    document.getElementById("msg").focus();
+}
+
+function send() {
+    var msg = document.getElementById('msg').value;
+    try {
+        socket.send(msg);
+    } catch (ex) {
+        log(ex);
+    }
+}
+function quit() {
+    log("Goodbye!");
+    socket.close();
+    socket = null;
+}
+function log(msg) {
+    document.getElementById("log").innerHTML += "<br>" + msg;
+}
+function onkey(event) {
+    if (event.keyCode == 13) {
+        send();
+    }
+}
+
 function displayMenu() {
     var nav = document.getElementById("nav");
     if (nav.style.display === "none") {
