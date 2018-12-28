@@ -14,15 +14,11 @@
 						<li><a href= "edit-profile.php">Edit profile</a></li>
 						<li><a href= "top-locations.php">Top Locations</a></li>
 						<li><a href= "raport.html">Raport</a></li>				
-						<li class = "login-parrent"><a class = "login-button" onclick="displayLogin()">Login</a>
-							<div id = "login-form">
-								<form action="/action_page.php">
-									<input type="text" name="firstname" value="First Name">
-									<input type="text" name="lastname" value="Last Name">
-									<input type="submit" value="Login">
-								</form> 
-							</div> 
-						</li>
+						<li><a href = "#" id = "facebook-logout" onclick="logout()">Logout</a></li>
+						<li>
+							<fb:login-button id = "facebook-login" scope="public_profile,email" onlogin="checkLoginState();">
+							</fb:login-button>
+						</li> 
 					</ul>
 				</div>
 			</nav>
