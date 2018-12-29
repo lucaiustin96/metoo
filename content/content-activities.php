@@ -1,4 +1,5 @@
-<div class = "article-wrapper" onload="initChat()">
+
+<div class = "article-wrapper" >
 	<div id = "notification">
 		<div class = "notification-close" onclick="closeNotification()">X</div>
 		John Smith posted something that might interest you.
@@ -9,15 +10,6 @@
 		<h3 class="text-center mrg-none pad-top-20">Your activities</h3>
 		<div class= "section-content">
 			<div class ="flex-container">
-				<div onload="initChat()" id = "chat-message">
-					<h3><div id = "userId"></div></h3>
-			        <div id="log"></div>
-			        <label>Message for: <input id="user2Id" type="text"/></label>
-			        <label><input id="msg" type="text" onkeypress="onkey(event)"/></label>
-			        <button onclick="send()">Send</button>
-			        <button onclick="quit()">Quit</button>
-			        <div>Server will echo your response!</div>	
-				</div>
 				<div class="chat-icon" onclick="displayMessage()"><span class="icon-bubbles2"></span></div>
 
 				<div class = "left">
@@ -54,7 +46,7 @@
 					</div>
 				</div>
 
-				<div class = "right">
+				<div id = "right">
 					<div class = "post">
 						<div class = "post-info">Jhon Smith / 29-10-2018</div>
 						Lorem ipsum dolor sit amet, sit id quaestio persecuti contentiones. Usu ei discere instructior, mel simul ridens te, quidam labitur vim et. Omnis electram posidonium sit no, graece labitur saperet mea ut, justo sententiae id sea. Vel diam ridens electram ei.

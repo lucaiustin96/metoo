@@ -8,7 +8,7 @@
 			<div class= "logo">Metoo</div>
 			<nav>
 				<div id = "nav">
-					<ul>
+					<ul id = "nav-ul">
 						<li><a href= "index.php">Home</a></li>
 						<li><a href= "activities.php">Your activities</a></li>
 						<li><a href= "edit-profile.php">Edit profile</a></li>

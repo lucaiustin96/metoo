@@ -1,3 +1,38 @@
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var user = getCookie("username");
+  if (user != "") {
+   // alert("Welcome again " + user);
+  } else {
+    user = prompt("Please enter your name:", "");
+    if (user != "" && user != null) {
+      setCookie("username", user, 365);
+    }
+  }
+}
+
+//////////////////////////////////////////////
 var userId = -1;
 var chatWindows = [];
 
@@ -22,13 +57,14 @@ window.fbAsyncInit = function() {
        function statusChangeCallback(response){
          if(response.status === 'connected'){
            userId = response.authResponse.userID;
-           document.cookie = "id=1";
-           initChat();
+           setCookie("userId", userId, 1);
+          initChat();
            document.getElementById("userId").innerHTML = userId;
            setElements(true);
          } else {
            userId = -1;
-           document.getElementById("userId").innerHTML = userId;
+           setCookie("userId", userId, 1);
+          // document.getElementById("userId").innerHTML = userId;
            setElements(false);
          }
        }
@@ -54,6 +90,52 @@ window.fbAsyncInit = function() {
       }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function loadPosts(){
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'posts.php', true);
+
+      xhr.onload = function(){
+        if(this.status == 200){
+          var users = JSON.parse(this.responseText);
+          
+          var output = '';
+          
+          for(var i in users){
+            output += 
+            '<div class = "post">' +
+                '<div class = "post-info">' +
+                users[i].name +  ' / '+users[i].date+ ' / ' + users[i].userId + 
+                '<input type="hidden" id="userId'+users[i].userId+'"'+ 
+                'value="'+users[i].userId+'"></div>'+
+                 //users[i].message +
+    
+                '<div class = "message-icon" id = "chat-icon-1" onclick="displaychat('+users[i].userId+')">'+
+                    '<span class="icon-bubbles4"></span>'+
+                '</div>'+
+                '<div class = "chat-wrapper" id = "chat-window-'+users[i].userId+'">'+
+                    '<div class = "chat-msg"  id = "chat'+users[i].userId+'">'+
+                        '<h3><div id = "userId"></div></h3>'+
+                        '<div class = "msg-log" id="log'+users[i].userId+'"></div>'+
+                       // '<label>Message for: <input id="user2Id" type="text"/></label>'+
+                        '<label><input class = "msg-text" id="msg'+users[i].userId+'" type="text" onkeypress="onkey(event)"/></label>'+
+                        '<button class = "send-msg" onclick="send('+users[i].userId+')">Send</button>'+
+                        '<div class = "chat-close" onclick="quitDinamic('+users[i].userId+')">X</div></div>'+
+                    '</div>'+
+
+                '</div>' +
+            '</div>';
+          }
+          document.getElementById('right').innerHTML = output;
+
+          var chat = document.getElementById("chat-window-"+users[i].userId);
+          chat.style.display = "none";
+        }
+      }
+      xhr.send();
+    }
+    loadPosts();
+//setInterval(loadPosts, 10000 );
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var socket;
 function createSocket(host) {
     if ('WebSocket' in window)
@@ -66,7 +148,7 @@ function initChat() {
     var host = "ws://localhost:12345/chat";
     try {
         socket = createSocket(host);
-        log('WebSocket - status ' + socket.readyState);
+        console.log('WebSocket - status ' + socket.readyState);
         socket.onopen = function(msg) {
           // log("Welcome - status " + this.readyState);
             socket.send(userId);
@@ -78,7 +160,7 @@ function initChat() {
             {
                 if (msg.data.includes("said: log"))
                 {
-                    log(msg.data);
+                    logDinamic(msg.data, res[0]);
                 }
                 else{
                   //  alert(chatWindows);
@@ -96,16 +178,17 @@ function initChat() {
             }
         };
         socket.onclose = function(msg) {
-            log("Disconnected - status " + this.readyState);
+            console.log("Disconnected - status " + this.readyState);
         };
     }
     catch (ex) {
-        log(ex);
+        console.log(ex);
     }
-    document.getElementById("msg").focus();
+   // document.getElementById("msg").focus();
 }
 
 function sendDinamic(id) {
+
     var msg = document.getElementById('msg'+id).value;
     //var user2Id = document.getElementById('user2Id'+id).value;
     try {
@@ -114,24 +197,25 @@ function sendDinamic(id) {
         socket.send(res);
         //alert("Msg trimis este" + res);
     } catch (ex) {
-        log(ex);
+        console.log(ex);
     }
 }
 
-function send() {
-    var msg = document.getElementById('msg').value;
-    var user2Id = document.getElementById('user2Id').value;
+function send(user2Id) {
+
+    var msg = document.getElementById('msg'+user2Id).value;
+    //var user2Id = document.getElementById('user2Id').value;
     try {
         var res = user2Id + " " + msg;
-        log("Tu: " + msg);
+        logDinamic("Tu: " + msg, user2Id);
         socket.send(res);
     } catch (ex) {
-        log(ex);
+        console.log(ex);
     }
 }
 
 function quit() {
-    log("Goodbye!");
+    console.log("Goodbye!");
     socket.close();
     socket = null;
 }
@@ -143,17 +227,30 @@ function quitDinamic(id) {
     socket = null;
 }
 
+function logDinamic(msg, id) {
+    document.getElementById("log"+id).innerHTML += "<br>" + msg;
+}
+
 function log(msg) {
-    document.getElementById("log").innerHTML += "<br>" + msg;
+    ;//document.getElementById("log").innerHTML += "<br>" + msg;
 }
 
 function onkey(event) {
     if (event.keyCode == 13) {
-        send();
+       ;// send();
     }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function displaychat(id) {
+    var chat = document.getElementById("chat-window-"+id);
+    if (chat.style.display === "none") {
+        chat.style.display = "block";
+    } else {
+        chat.style.display = "none";
+    }
+}
+
 function displayMenu() {
     var nav = document.getElementById("nav");
     if (nav.style.display === "none") {

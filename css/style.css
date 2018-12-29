@@ -1,3 +1,10 @@
+.message-icon{
+	font-size: 30px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
 body {
 	padding: 0;
 	margin: 0;
@@ -13,6 +20,11 @@ body {
 	display: inline-block;
 }
 
+.chat-wrapper{
+	position: absolute;
+	display: none;
+	z-index: 10000;
+}
 #chat-area{
 	width: 100%;
 	height: 400px;
@@ -150,14 +162,15 @@ body {
 	padding: 10px;
 }
 
-.right{
+#right{
 	position: relative;
 }
 
 .post{
-	margin-top: 5px;
+	margin-top: 20px;
 	margin-bottom: 5px;
 	width: auto;
+	min-height: 100px;
 	padding: 10px;
 	padding-right: 50px;
 	height: auto;
@@ -409,7 +422,7 @@ body {
 	height: 370px;
 	position: absolute;
 	background-color: #e2e2e2;
-	display: none;
+	
 	z-index: 1000;
 	left: 0;
 }
