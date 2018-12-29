@@ -1,4 +1,3 @@
-#!/php -q
 <?php
 // Set timezone of script to UTC inorder to avoid DateTime warnings in
 // vendor/zendframework/zend-log/Zend/Log/Logger.php
@@ -29,10 +28,11 @@ class ChatHandler extends WebSocketUriHandler {
 	}
 
     public function onConnect(WebSocketTransportInterface $user){
-        foreach($this->getConnections() as $client){
+        /*foreach($this->getConnections() as $client){
         	fwrite($this -> _myfile, $client -> getId());
             $client->sendString("User {$user->getId()} joined the chat: ");
-        }
+        }*/
+        ;
     }
     
     public function onMessage(WebSocketTransportInterface $user, WebSocketMessageInterface $msg) {
@@ -41,20 +41,21 @@ class ChatHandler extends WebSocketUriHandler {
 		if(array_key_exists($user->getId(), $this -> connectedUsers))
 		{
 			foreach($this->getConnections() as $client){
-	            $client->sendString("User {$user->getId()} said: ".$msg->getData());
+                $msgcpy =  $msg->getData();
+                $substrings = explode(" ", $msgcpy);
+                if($this -> connectedUsers[$client->getId()] === $substrings[0] || $substrings[0] === "log" && $this -> connectedUsers[$client->getId()] === $substrings[1])
+	               $client->sendString("{$this -> connectedUsers[$user->getId()]} said: ". $msgcpy);
 	        } 
 		}else{
 			$this -> connectedUsers[$user->getId()] = $msg->getData();
 			foreach($this->getConnections() as $client){
-	            $client->sendString("First {$user->getId()} said: ".$msg->getData());
-
+	           ;// $client->sendString("First {$user->getId()} said: ".$msg->getData());
 	        } 
-	        //fwrite($this -> _myfile, implode(" ", $this->getConnections() ));
-
-		}
-	    	   
+		}	    	   
     }
 }
+
+
 class ChatHandlerForUnroutedUrls extends WebSocketUriHandler {
     /**
      * This class deals with users who are not routed

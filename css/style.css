@@ -4,13 +4,68 @@ body {
 	font-family: 'Muli', sans-serif;
 }
 
-#log {width:440px; height:200px; border:1px solid #7F9DB9; overflow:auto;}
+#log {width:390px; height:200px; border:1px solid #7F9DB9; overflow:auto;}
 #msg {width:330px;}
 
 #facebook-login{
 	background: red;
 	line-height: 22px;
 	display: inline-block;
+}
+
+#chat-area{
+	width: 100%;
+	height: 400px;
+	position: absolute;
+	bottom: 0;
+	z-index: 100000;
+}
+
+.chat-msg{
+	width: 400px;
+	height: 95%;
+	border: 2px solid #000;
+	background-color: #e2e2e2;
+	margin-left: 5px;
+	margin-right: 5px;
+	display: inline-block;
+	float: right;
+	position: relative;
+}
+
+.msg-text{
+	width: 380px;
+	height: 35px;
+	line-height: 25px;
+	margin: auto;
+	margin-top: 30px;
+	display: block;
+}
+
+.quit-chat{
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: red;
+}
+
+.send-msg{
+	background: #007c3c;
+	width: 200px;
+	height: 30px;
+	margin: auto;
+	margin-top: 5px;
+	display: block;
+	border: none;
+}
+
+.msg-log {
+	width:380px; 
+	height:200px; 
+	border:1px solid #7F9DB9; 
+	overflow:auto;
+	background: #fff;
+	margin: auto;
 }
 
 #notification{
@@ -20,7 +75,7 @@ body {
 	position: fixed;
 	left: 20px;
 	bottom: 20px;
-	font: 15px;
+	font:515px;
 	padding: 10px;
 	padding-top: 20px;
 	z-index: 10000;
@@ -171,7 +226,6 @@ body {
 }
 
 .chat-close{
-	float: right;
 	height: 40px;
 	width: 40px;
 	margin-bottom: 10px;
@@ -179,6 +233,9 @@ body {
 	line-height: 40px;
 	text-align: center;
 	cursor: pointer;
+	position: absolute;
+	right: 5px;
+	top: 5px;
 }
 
 .chat-close:hover{
