@@ -1,3 +1,5 @@
+
+///Functii pentru cookies
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -32,7 +34,8 @@ function checkCookie() {
   }
 }
 
-//////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+//Facebook Login Api
 var userId = -1;
 var chatWindows = [];
 
@@ -58,8 +61,8 @@ window.fbAsyncInit = function() {
          if(response.status === 'connected'){
            userId = response.authResponse.userID;
            setCookie("userId", userId, 1);
-          initChat();
-           document.getElementById("userId").innerHTML = userId;
+          //initChat();
+           //document.getElementById("userId").innerHTML = userId;
            setElements(true);
          } else {
            userId = -1;
@@ -90,7 +93,11 @@ window.fbAsyncInit = function() {
       }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Functia care incarca postarile din baza de date
 function loadPosts(){
+      //pornim chat-ul
+      initChat();
+
       var xhr = new XMLHttpRequest();
       xhr.open('GET', 'posts.php', true);
 
@@ -107,7 +114,7 @@ function loadPosts(){
                 users[i].name +  ' / '+users[i].date+ ' / ' + users[i].userId + 
                 '<input type="hidden" id="userId'+users[i].userId+'"'+ 
                 'value="'+users[i].userId+'"></div>'+
-                 //users[i].message +
+                 users[i].message +
     
                 '<div class = "message-icon" id = "chat-icon-1" onclick="displaychat('+users[i].userId+')">'+
                     '<span class="icon-bubbles4"></span>'+
@@ -119,13 +126,13 @@ function loadPosts(){
                        // '<label>Message for: <input id="user2Id" type="text"/></label>'+
                         '<label><input class = "msg-text" id="msg'+users[i].userId+'" type="text" onkeypress="onkey(event)"/></label>'+
                         '<button class = "send-msg" onclick="send('+users[i].userId+')">Send</button>'+
-                        '<div class = "chat-close" onclick="quitDinamic('+users[i].userId+')">X</div></div>'+
+                       // '<div class = "chat-close" onclick="quitDinamic('+users[i].userId+')">X</div></div>'+
                     '</div>'+
 
                 '</div>' +
             '</div>';
           }
-          document.getElementById('right').innerHTML = output;
+          document.getElementById('posts').innerHTML = output;
 
           var chat = document.getElementById("chat-window-"+users[i].userId);
           chat.style.display = "none";
@@ -136,6 +143,29 @@ function loadPosts(){
     loadPosts();
 //setInterval(loadPosts, 10000 );
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Fuctia care adauga locatii in baza de
+document.getElementById('locationForm').addEventListener('submit', postName);
+function postName(e){
+    e.preventDefault();
+
+    var location = document.getElementById('location').value;
+    
+    var params = "location="+location+"&"+"userId="+userId;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'locations.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    xhr.onload = function(){
+        console.log(this.responseText);
+    }
+
+    xhr.send(params);
+}
+
+
+/////////////////////////////////////////
+//Serverul pentru chat - aici sunt functiile care directioneaza mesajele catre casutele de chat
 var socket;
 function createSocket(host) {
     if ('WebSocket' in window)
@@ -154,25 +184,22 @@ function initChat() {
             socket.send(userId);
         };
         socket.onmessage = function(msg) {
-            //alert("Msg primit este: " + msg.data);
             var res = msg.data.split(" ");
             if(!msg.data.startsWith("First"))
             {
-                if (msg.data.includes("said: log"))
+                if (msg.data.includes("said: log")) 
                 {
                     logDinamic(msg.data, res[0]);
                 }
                 else{
-                  //  alert(chatWindows);
-                   // if(typeof chatWindows[res[0]] === 'undefined') {
                     if(!chatWindows.includes(res[0])) {
                         chatWindows.push(res[0]);
                         document.getElementById("chat-area").innerHTML += '<div class = "chat-msg" id = "chat'+res[0]+'" ><h3><div id = "userId"></div></h3><div class = "msg-log" id="'+res[0]+'"></div><label><input class = "msg-text" id="msg'+res[0]+'" type="text"/></label><button class = "send-msg" onclick="sendDinamic('+res[0]+')">Send</button><div class = "chat-close" onclick="quitDinamic('+res[0]+')">X</div></div>';
-                        document.getElementById(res[0]).innerHTML = "First<br>" + msg.data;
+                        document.getElementById(res[0]).innerHTML = "<br>" + msg.data;
                     }
                     else{
 
-                        document.getElementById(res[0]).innerHTML += "Secound<br><br><br>" + msg.data + "<br><br><br>"; 
+                        document.getElementById(res[0]).innerHTML += "<br>" + msg.data; 
                     }
                 }
             }
@@ -193,7 +220,7 @@ function sendDinamic(id) {
     //var user2Id = document.getElementById('user2Id'+id).value;
     try {
         var res = "log " + id + " " + msg;
-        document.getElementById(id).innerHTML += "Tu: " + msg;
+        document.getElementById(id).innerHTML += "<br>Tu: " + msg;
         socket.send(res);
         //alert("Msg trimis este" + res);
     } catch (ex) {
@@ -207,7 +234,7 @@ function send(user2Id) {
     //var user2Id = document.getElementById('user2Id').value;
     try {
         var res = user2Id + " " + msg;
-        logDinamic("Tu: " + msg, user2Id);
+        logDinamic("<br>Tu: " + msg, user2Id);
         socket.send(res);
     } catch (ex) {
         console.log(ex);
@@ -223,8 +250,8 @@ function quit() {
 function quitDinamic(id) {
     var quit = document.getElementById("chat"+id);
     quit.style.display = "none";
-    socket.close();
-    socket = null;
+    //socket.close();
+    //socket = null;
 }
 
 function logDinamic(msg, id) {

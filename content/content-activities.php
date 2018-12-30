@@ -37,46 +37,48 @@
 							<div class = "add-place-text" onclick = "addPlace()"> Add new place </div>
 							<div id = "add-place-window">
 								<div class = "add-place-window-cancel" onclick = "addPlace()">X</div>
-								<form action="/action_page.php">
-									<input type="text" name="firstname" value="First Name">
-									<input type="submit" value="Add Place">
-								</form> 
+								  <form id="locationForm">
+								    <input type="text" name="location" id="location">
+								    <input type="submit" value="Submit">
+								  </form>
 							</div>
 						</div>
 					</div>
 				</div>
-
 				<div id = "right">
-					<div class = "post">
-						<div class = "post-info">Jhon Smith / 29-10-2018</div>
-						Lorem ipsum dolor sit amet, sit id quaestio persecuti contentiones. Usu ei discere instructior, mel simul ridens te, quidam labitur vim et. Omnis electram posidonium sit no, graece labitur saperet mea ut, justo sententiae id sea. Vel diam ridens electram ei.
-						<div class = "post-chat-icon" onclick="sendMessageWindow()"><span class="icon-bubbles4"></span></div>
-					</div>
+					<div id = "refresh-posts" onclick="loadPosts()">Refresh posts</div>
+					<div id = "posts">
+						<div class = "post">
+							<div class = "post-info">Jhon Smith / 29-10-2018</div>
+							Lorem ipsum dolor sit amet, sit id quaestio persecuti contentiones. Usu ei discere instructior, mel simul ridens te, quidam labitur vim et. Omnis electram posidonium sit no, graece labitur saperet mea ut, justo sententiae id sea. Vel diam ridens electram ei.
+							<div class = "post-chat-icon" onclick="sendMessageWindow()"><span class="icon-bubbles4"></span></div>
+						</div>
 
-					<div class = "post">
-						<div class = "post-info">Jhon Smith / 29-10-2018</div>
-						Lorem ipsum dolor sit amet, sit id quaestio persecuti contentiones. Usu ei discere instructior, mel simul ridens te, quidam labitur vim et. Omnis electram posidonium sit no, graece labitur saperet mea ut, justo sententiae id sea. Vel diam ridens electram ei.
-						<div class = "post-chat-icon" onclick="sendMessageWindow()"><span class="icon-bubbles4"></span></div>
-					</div>
+						<div class = "post">
+							<div class = "post-info">Jhon Smith / 29-10-2018</div>
+							Lorem ipsum dolor sit amet, sit id quaestio persecuti contentiones. Usu ei discere instructior, mel simul ridens te, quidam labitur vim et. Omnis electram posidonium sit no, graece labitur saperet mea ut, justo sententiae id sea. Vel diam ridens electram ei.
+							<div class = "post-chat-icon" onclick="sendMessageWindow()"><span class="icon-bubbles4"></span></div>
+						</div>
 
-					<div class = "post">
-						<div class = "post-info">Jhon Smith / 29-10-2018</div>
-						Lorem ipsum dolor sit amet, sit id quaestio persecuti contentiones. Usu ei discere instructior, mel simul ridens te, quidam labitur vim et. Omnis electram posidonium sit no, graece labitur saperet mea ut, justo sententiae id sea. Vel diam ridens electram ei.
-						<div class = "post-chat-icon" onclick="sendMessageWindow()"><span class="icon-bubbles4"></span></div>
-					</div>
+						<div class = "post">
+							<div class = "post-info">Jhon Smith / 29-10-2018</div>
+							Lorem ipsum dolor sit amet, sit id quaestio persecuti contentiones. Usu ei discere instructior, mel simul ridens te, quidam labitur vim et. Omnis electram posidonium sit no, graece labitur saperet mea ut, justo sententiae id sea. Vel diam ridens electram ei.
+							<div class = "post-chat-icon" onclick="sendMessageWindow()"><span class="icon-bubbles4"></span></div>
+						</div>
 
-					<div class = "post">
-						<div class = "post-info">Jhon Smith / 29-10-2018</div>
-						Lorem ipsum dolor sit amet, sit id quaestio persecuti contentiones. Usu ei discere instructior, mel simul ridens te, quidam labitur vim et. Omnis electram posidonium sit no, graece labitur saperet mea ut, justo sententiae id sea. Vel diam ridens electram ei.
-						<div class = "post-chat-icon" onclick="sendMessageWindow()"><span class="icon-bubbles4"></span></div>
-					</div>
+						<div class = "post">
+							<div class = "post-info">Jhon Smith / 29-10-2018</div>
+							Lorem ipsum dolor sit amet, sit id quaestio persecuti contentiones. Usu ei discere instructior, mel simul ridens te, quidam labitur vim et. Omnis electram posidonium sit no, graece labitur saperet mea ut, justo sententiae id sea. Vel diam ridens electram ei.
+							<div class = "post-chat-icon" onclick="sendMessageWindow()"><span class="icon-bubbles4"></span></div>
+						</div>
 
-					<div id = "send-message">
-						<div class = "chat-close" onclick="sendMessageWindow()">X</div>
-						<form action="/action_page.php">
-							<textarea ></textarea>
-							<input type="submit" value="Send">
-							</form>
+						<div id = "send-message">
+							<div class = "chat-close" onclick="sendMessageWindow()">X</div>
+							<form action="/action_page.php">
+								<textarea ></textarea>
+								<input type="submit" value="Send">
+								</form>
+						</div>
 					</div>
 				</div>
 			</div>
