@@ -1,4 +1,13 @@
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('../service.js')
+      .then(reg => console.log('Service Worker: Registered (Pages)'))
+      .catch(err => console.log(`Service Worker: Error: ${err}`));
+  });
+}
 
+//////////////////////////////////////////////
 ///Functii pentru cookies
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
@@ -126,7 +135,7 @@ function loadPosts(){
                        // '<label>Message for: <input id="user2Id" type="text"/></label>'+
                         '<label><input class = "msg-text" id="msg'+users[i].userId+'" type="text" onkeypress="onkey(event)"/></label>'+
                         '<button class = "send-msg" onclick="send('+users[i].userId+')">Send</button>'+
-                       // '<div class = "chat-close" onclick="quitDinamic('+users[i].userId+')">X</div></div>'+
+                        '<div class = "chat-close" onclick="quitDinamic('+users[i].userId+')">X</div></div>'+
                     '</div>'+
 
                 '</div>' +
