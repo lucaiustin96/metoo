@@ -13,23 +13,18 @@
 				<div class="chat-icon" onclick="displayMessage()"><span class="icon-bubbles2"></span></div>
 
 				<div class = "left">
-					<form action="/action_page.php">
-						<label for="country">Your location</label>
-						<select id="country" name="country">
-							<option value="australia">BCU Iasi</option>
-							<option value="canada">Parcul Copou</option>
-							<option value="usa">Palas</option>
-						</select>
-					</form>
 					<div class = "flex-container-card">
 						<div class = "add-post">
 							<div class = "add-post-text" onclick="postWindow()"> Add your intention </div>
 							<div id = "add-post-window">
 								<div class = "add-post-cancel"  onclick="postWindow()">X</div>
-								<form action="/action_page.php">
-									<textarea ></textarea>
-									<input type="submit" value="Send">
-									</form>
+								<form id = "postForm">
+									<div id = "locations-list">
+									</div>
+									<div id = "username"></div>
+									 <textarea name="postContent" id="postContent">Add some text...</textarea>
+									 <input type="submit" value="Submit">
+								</form>
 							</div>
 						</div>
 
