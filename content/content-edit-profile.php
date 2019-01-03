@@ -10,12 +10,12 @@
             <input type="text" id="lastName" name="lastName" placeholder="Last name">
 
             <label class="fontTypeL"> Abilities </label>
-            <input type="text" class="abilities" name="abilities" placeholder="Your ability here">
-            <input type="text" class="abilities" name="abilities" placeholder="Your ability here">
-            <input type="text" class="abilities" name="abilities" placeholder="Your ability here">
+            <input type="text" id="ability-0" name="abilities" placeholder="Your ability here">
+            <input type="text" id="ability-1" name="abilities" placeholder="Your ability here">
+            <input type="text" id="ability-2" name="abilities" placeholder="Your ability here">
             <input type="button" value="Add more abilities" id="addAbilities" class="displayBlockL" onclick="addAbility()">
 
-            <input type="button" value="Submit" class="displayBlockL submit-button mrg-top-bot-20" id="submitForm">
+            <input type="button" value="Submit" class="displayBlockL submit-button mrg-top-bot-20" id="submitForm" onclick="submitChanges()">
         </form>
     </section>
 </div>
