@@ -10,8 +10,12 @@
 				<div id = "nav">
 					<ul id = "nav-ul">
 						<li><a href= "index.php">Home</a></li>
-						<li><a href= "activities.php">Your activities</a></li>
-						<li><a href= "edit-profile.php">Edit profile</a></li>
+						<?php 
+							if(isset($_COOKIE['userId']) && $_COOKIE['userId'] != -1){
+								echo '<li><a href= "activities.php">Your activities</a></li>
+								<li><a href= "edit-profile.php">Edit profile</a></li>';
+							}
+						?>
 						<li><a href= "top-locations.php">Top Locations</a></li>
 						<li><a href= "raport.html">Raport</a></li>				
 						<li><a href = "#" id = "facebook-logout" onclick="logout()">Logout</a></li>

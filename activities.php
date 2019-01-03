@@ -11,7 +11,12 @@
 	</head>
 	<body>
 		<?php include("header.php"); ?>
-		<?php include("content/content-activities.php"); ?>
+		<?php 
+							if(isset($_COOKIE['userId']) && $_COOKIE['userId'] != -1)
+								include("content/content-activities.php");
+							else
+								include("content/content-login.php");
+							?>
 		<?php include("footer.php"); ?>
 	</body>
 </html>

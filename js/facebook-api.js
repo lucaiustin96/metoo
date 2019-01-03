@@ -23,6 +23,8 @@ window.fbAsyncInit = function() {
        function statusChangeCallback(response){
          if(response.status === 'connected'){
            userId = response.authResponse.userID;
+           if(getCookie("userId") == -1)
+              location.reload();
            setCookie("userId", userId, 1);
            FB.api('/me', {fields: 'last_name'}, function(response) {
             last_name = response.last_name;
@@ -30,13 +32,11 @@ window.fbAsyncInit = function() {
            FB.api('/me', {fields: 'first_name'}, function(response) {
             first_name = response.first_name;
           });
-          //initChat();
-           //document.getElementById("userId").innerHTML = userId;
            setElements(true);
          } else {
            userId = -1;
            setCookie("userId", userId, 1);
-          // document.getElementById("userId").innerHTML = userId;
+
            setElements(false);
          }
        }
@@ -58,6 +58,8 @@ window.fbAsyncInit = function() {
       function logout(){
         FB.logout(function(response){
           userId = -1;
+          setCookie("userId", -1, 1);
+              location.reload();
           setElements(false);
         });
       }
