@@ -1,12 +1,13 @@
 function loadTopLocations() {
     let http = new XMLHttpRequest();
     let response = "";
+    let index;
     let parentDiv = document.querySelector('.locations');    
     http.onreadystatechange = function() {
         if (http.readyState == 4 && http.status == 200) {
             response = JSON.parse(http.responseText);
-
-            for (let i = 0; i < response.length; i++) {
+            index = response.length < 4 ? response.length : 4;
+            for (let i = 0; i < index; i++) {
                 let div = document.createElement('div');
                 div.setAttribute('class', 'location-item');
                 parentDiv.appendChild(div);
@@ -18,7 +19,7 @@ function loadTopLocations() {
 
                 let address = document.createElement('p');
                 address.setAttribute('class', 'location-address');
-                address.innerHTML = 'Strada Pacurari, Nr. 4, Iasi';
+                address.innerHTML = response[i].address;
                 div.appendChild(address);
             }
         }
