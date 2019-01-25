@@ -22,7 +22,7 @@
 									<div id = "locations-list">
 									</div>
 									<div id = "username"></div>
-									 <textarea name="postContent" id="postContent">Add some text...</textarea>
+									 <textarea name="postContent" id="postContent" placeholder="Add some text..."></textarea>
 									 <input type="submit" value="Submit">
 								</form>
 							</div>
