@@ -69,8 +69,9 @@ function postName(e){
     e.preventDefault();
 
     var location = document.getElementById('location').value;
+    var address = document.getElementById('address').value;
     
-    var params = "location="+location+"&"+"userId="+userId;
+    var params = "location=" + location + "&" + "userId=" + userId + "&" + "address=" + address;
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'locations.php', true);

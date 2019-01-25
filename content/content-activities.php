@@ -33,7 +33,8 @@
 							<div id = "add-place-window">
 								<div class = "add-place-window-cancel" onclick = "addPlace()">X</div>
 								  <form id="locationForm">
-								    <input type="text" name="location" id="location">
+								    <input type="text" name="location" id="location" placeholder="Locatia">
+									<input type="text" name="address" id="address" placeholder="Adresa">
 								    <input type="submit" value="Submit">
 								  </form>
 							</div>

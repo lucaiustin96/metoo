@@ -14,7 +14,11 @@ if(isset($_POST['userId'])){
   $userId = mysqli_real_escape_string($conn, $_POST['userId']);  
   //echo 'POST: Your name is '. $_POST['name'];
 }
-  $query = "INSERT INTO locations(location, user) VALUES('$location', '$userId')";
+
+if(isset($_POST['address'])){
+  $address = mysqli_real_escape_string($conn, $_POST['address']);
+}
+  $query = "INSERT INTO locations(location, user, address) VALUES('$location', '$userId', '$address')";
 
 if(mysqli_query($conn, $query)){
 echo 'Datele au fost inserate...';
