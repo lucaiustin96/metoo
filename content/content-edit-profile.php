@@ -3,11 +3,11 @@
         <h3 class="fontTypeL pad-top-bot-30"> Edit your profile </h3>
         <form class="completeFormL widthForm">
 
-            <label for="firstName" class="fontTypeL"> First name </label>
+            <!-- <label for="firstName" class="fontTypeL"> First name </label>
             <input type="text" id="firstName" name="firstName" placeholder="First name">
 
             <label for="lastName" class="fontTypeL"> Last name </label>
-            <input type="text" id="lastName" name="lastName" placeholder="Last name">
+            <input type="text" id="lastName" name="lastName" placeholder="Last name"> -->
 
             <label class="fontTypeL"> Abilities </label>
             <input type="text" id="ability-0" name="abilities" placeholder="Your ability here">
