@@ -17,14 +17,10 @@ function submitChanges() {
         alert('All fields are required!');
         return false;
     }
-    let data = {
-        // firstName: document.querySelector('#firstName').value,
-        // lastName: document.querySelector('#lastName').value
-    };
+    let data = {};
     for (let i = 0; i < counter; i++) {
         data[`ability${i}`] = document.querySelector(`#ability-${i}`).value;
     }
-    console.log(data);
 
     for (let property in data) {
         console.log(data[property]);
@@ -33,7 +29,6 @@ function submitChanges() {
         let http = new XMLHttpRequest();
         http.onreadystatechange = function() {
             if (http.readyState == 4 && http.status == 200) {
-                console.log(http.responseText);
                 window.location.href = window.location.pathname;
             }
         }
@@ -45,16 +40,6 @@ function submitChanges() {
 }
 
 function validateForm() {
-    // let firstName = document.querySelector('#firstName').value;
-    // let lastName = document.querySelector('#lastName').value;
-    
-    // if (firstName === '') {
-    //     return false;
-    // }
-    // if (lastName === '') {
-    //     return false;
-    // }
-
     for (let i = 0; i < counter; i++) {
         let ability = document.querySelector(`#ability-${i}`).value;
         if (ability === '') {
