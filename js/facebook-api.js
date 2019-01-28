@@ -3,7 +3,7 @@ var last_name;
 var first_name;
 window.fbAsyncInit = function() {
         FB.init({
-          appId      : '3061256547233602',
+          appId      : '245140119730909',
           cookie     : true,
           xfbml      : true,
           version    : 'v2.8'
