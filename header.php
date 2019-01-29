@@ -4,7 +4,6 @@
 			<div class = "menu-icon" onclick="displayMenu()">
 				<span class="icon-menu"></span>
 			</div>
-			<div class = "chat-icon-mobile" onclick="displayMessage()"><span class="icon-bubbles2"></span></div>
 			<div class= "logo">Metoo</div>
 			<nav>
 				<div id = "nav">
