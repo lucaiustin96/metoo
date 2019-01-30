@@ -3,7 +3,6 @@
 function loadPosts(){
       //pornim chat-ul
       initChat();
-
       var xhr = new XMLHttpRequest();
       xhr.open('GET', 'posts.php', true);
 
@@ -12,7 +11,6 @@ function loadPosts(){
           var posts = JSON.parse(this.responseText);
           
           var output = '';
-          
           for(var i in posts){
             if(userId == posts[i].userId)
             {
@@ -36,9 +34,9 @@ function loadPosts(){
                   '<span class="icon-bubbles4"></span>'+
                 '</div>' +
 
-                '<div class = "chat-wrapper" id = "chat-window-'+posts[i].userId+'">'+
+                '<div class = "chat-wrapper" id = "chat-window-'+posts[i].userId+'" id = "your-chat-' +posts[i].id+ '">'+
                     '<div class = "chat-msg"  id = "chat'+posts[i].userId+'">'+
-                      //  '<h3><div id = "userId"></div></h3>'+
+                        '<div class = "close-your-chat" onclick="displaychat('+posts[i].userId+')">X</div>' +
                         '<div class = "msg-log" id="log'+posts[i].userId+'"></div>'+
                         '<label><input class = "msg-text" id="msg'+posts[i].userId+'" type="text" onkeypress="onkey(event)"></label>'+
                         //'<button class = "send-msg" onclick="send('+posts[i].userId+')">Send</button>'+
@@ -59,7 +57,10 @@ function loadPosts(){
       }
       xhr.send();
     }
-    loadPosts();
+    window.onload = function(){
+      loadPosts();
+    }
+    setTimeout(function() { loadPosts(); }, 500);
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Fuctia care adauga locatii in baza de
 if (document.querySelector('#locationForm') !== null) {
@@ -145,4 +146,5 @@ function deletePost(e){
     }
 
     xhr.send(params);
+    loadPosts()
 }

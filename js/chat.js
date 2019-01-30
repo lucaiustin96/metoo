@@ -92,6 +92,7 @@ function quitDinamic(id) {
 }
 
 function logDinamic(msg, id) {
+    msg = msg.replace("said: log", "said: ");
     document.getElementById("log"+id).innerHTML += "<br>" + msg;
 }
 
