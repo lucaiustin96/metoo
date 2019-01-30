@@ -23,15 +23,15 @@ function submitChanges() {
     }
 
     for (let property in data) {
-        console.log(data[property]);
-
-        let param = `abilities=${data[property]}`;
+        let param = `abilities=${data[property]}&userId=${userId}`;
         let http = new XMLHttpRequest();
+        
         http.onreadystatechange = function() {
             if (http.readyState == 4 && http.status == 200) {
                 window.location.href = window.location.pathname;
             }
         }
+
         http.open('POST', 'add-abilities.php', true);
         http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         http.send(param);

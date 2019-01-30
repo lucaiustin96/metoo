@@ -122,17 +122,22 @@ body {
 	top: 10px;
 }
 
-#notification{
-	width: 250px;
-	height: 50px;
-	background: #e0e0e0;
+.notifications-list {
 	position: fixed;
-	left: 20px;
-	bottom: 20px;
-	font:515px;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
 	padding: 10px;
-	padding-top: 20px;
-	z-index: 10000;
+}
+
+.notification{
+	width: 250px;
+    height: 50px;
+    background: #e0e0e0;
+    padding: 20px 10px 10px;
+    margin: 10px;
+    box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.5);
 }
 
 .notification-close{
@@ -341,7 +346,6 @@ body {
 	background-color: #efefef;
 	top: 0;
 	left: 0;
-	display: none;
 	z-index: 1000;
 }
 

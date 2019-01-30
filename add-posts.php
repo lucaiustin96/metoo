@@ -1,4 +1,5 @@
 <?php
+	date_default_timezone_set('Europe/Bucharest');
 	// Connect to a database
 	$conn = mysqli_connect('localhost', 'root', '', 'metoo');
 
@@ -19,8 +20,10 @@
 	if(isset($_POST['postContent'])){
 	  $postContent = mysqli_real_escape_string($conn, $_POST['postContent']);  
 	}
-	$data = date("Y/m/d");
-	$query = "INSERT INTO posts(name, userId, message, location, date) VALUES('$name', '$userId', '$postContent', '$location', '$data')";
+	
+	$deit = date('Y-m-d H:i:s');
+	
+	$query = "INSERT INTO posts(name, userId, message, location, date) VALUES('$name', '$userId', '$postContent', '$location', '$deit')";
 
 	if(mysqli_query($conn, $query)){
 		echo 'Datele au fost inserate...';

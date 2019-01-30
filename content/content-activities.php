@@ -1,8 +1,9 @@
 
-<div class = "article-wrapper" >
-	<div id = "notification">
-		<div class = "notification-close" onclick="closeNotification()">X</div>
-		John Smith posted something that might interest you.
+<div class = "article-wrapper">
+	<div class="notifications-list"></div>
+	<div class="dummy-notification" style="display:none;">
+		<div class="notification-close" onclick="closeNotification()">X</div>
+		<span>John Smith posted something that might interest you.</span>
 	</div>
 	<div id = "chat-area">
 	</div>
@@ -16,7 +17,7 @@
 					<div class = "flex-container-card">
 						<div class = "add-post">
 							<div class = "add-post-text" onclick="postWindow()"> Add your intention </div>
-							<div id = "add-post-window">
+							<div id = "add-post-window" style="display: none;">
 								<div class = "add-post-cancel"  onclick="postWindow()">X</div>
 								<form id = "postForm">
 									<div id = "locations-list">
