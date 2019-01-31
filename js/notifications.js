@@ -15,9 +15,15 @@ function displayNotifications() {
 }
 
 const populateNotificationsContainer = notificationslist => {
+    if (document.querySelector('.notifications-list') !== null) {
+            document.getElementsByClassName('notifications-list')[0].innerHTML = '';
+        }
     const notificationsContainer = document.querySelector('.notifications-list');
     const dummyNotification = document.querySelector('.dummy-notification');
     notificationslist.forEach(({name, message}) => {
+        if (document.querySelector('.notifications-list') !== null) {
+            document.getElementsByClassName('notifications-list')[0].innerHTML = '';
+        }
         let notif = dummyNotification.cloneNode(true); 
         notif.setAttribute('class', 'notification');
         let content = notif.querySelector('span');
@@ -27,4 +33,4 @@ const populateNotificationsContainer = notificationslist => {
     });
 }
 
-setTimeout(displayNotifications, 1000);
+setInterval(displayNotifications, 1000);
