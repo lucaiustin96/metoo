@@ -60,7 +60,8 @@ function loadPosts(){
     window.onload = function(){
       loadPosts();
     }
-    setTimeout(function() { loadPosts(); }, 500);
+   // setTimeout(function() { loadPosts(); }, 500);
+   loadPosts();
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Fuctia care adauga locatii in baza de
 if (document.querySelector('#locationForm') !== null) {
