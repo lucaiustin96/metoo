@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ghid de utilizare METOO - Meet-up Web Tool</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/scholarly.css">    
+</head>
+
+<body prefix="schema: http://schema.org/">
+    <article typeof="schema:ScholarlyArticle">
+        <header>
+            <h1 property="schema:name">
+                Meet-up Web Tool (METOO) - Ghid
+                de utilizare
+            </h1>
+        </header>
+        <aside typeof="schema:WPSideBar" id="cuprins">
+            <h2>Cuprins:</h2>
+            <ol>
+                <li><a href="#descriere">Descrierea proiectului</a></li>
+                <li><a href="#homepage">Homepage</a></li>
+                <li><a href="#activities-page">Your activities page</a></li>
+                <li><a href="#edit-profile-page">Edit profile page</a></li>
+                <li><a href="#top-locations-page">Top locations page</a></li>
+                <li><a href="#demo">Demo</a></li>
+            </ol>
+        </aside>
+        <section typeof="schema:description" id="descriere">
+            <h2>1. Descrierea proiectului</h2>
+            <p>
+                MeToo este o aplicatie menita a incuraja interactiunea dintre persoanele care studiaza/lucreaza in localuri comune disponibile intr-un areal geografic. Odata ajuns intr-un astfel de spatiu, fiecare utilizator va putea sa anunte public ce activitatea desfasoara. Toti utilizatorii interesati de aceste activitati, in functie de abilitatile pe care le detin, vor primi notificari si se vor putea alatura utilizatorului care a postat anuntul. Totodata, aplicatia va contine o sectiune in care vor fi afisate cele mai populare astfel de locuri. 
+            </p>
+        </section>
+        <section id="homepage">
+            <h2>2. Homepage</h2>
+            <p>Utilizatorul are acces la urmatoarele pagini:</p>
+            <ul>
+                <li><a href="#homepage">Homepage</a></li>
+                <li><a href="#ctivities-page">Your activities page</a></li>
+                <li><a href="#edit-profile-page">Edit profile page</a></li>
+                <li><a href="#top-locations-page">Top locations page</a></li>
+            </ul>
+            <p>Homepage este pagina principala, cea cu care interactioneaza prima data utilizatorul in momentul in care acceseaza aplicatia. De aici utilizatorul trebuie sa se autentifice cu contul de Facebook pentru a putea continua activitatea in aplicatie.</p>
+            <div>
+                <figure typeof="schema:image">
+                    <img class="img-width" alt="homepage" src="./img/homepage.png">
+                    <figcaption class="text-center">
+                        Pagina principala
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+        <section id="activities-page">
+            <h2>3. Your activities page</h2>
+            <p>
+                Pagina de activitati este pagina in care se desfasoara principalele activitati. Aici utilizatorul poate vedea postarile, poate adauga o noua postare referitoare la activitatea pe care o realizeaza. De asemenea, utilizatorului ii este permis sa adauge o noua locatie in cazul in care locatia in care se afla nu se regaseste in lista locatiilor. 
+            </p>
+            <div class="afterAndBefore">
+                <figure typeof="schema:image">
+                    <img class="img-width" alt="activities" class="webMarkup" src="./img/activities.png">
+                    <figcaption class="text-center">
+                        Your activities page
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="afterAndBefore">
+                <figure typeof="schema:image">
+                    <img class="img-width" alt="adauga postare" class="webMarkup" src="./img/adauga-postare.png">
+                    <figcaption class="text-center">
+                        Adauga o noua postare
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="afterAndBefore">
+                <figure typeof="schema:image">
+                    <img class="img-width" alt="adauga locatie" class="webMarkup" src="./img/adauga-locatie.png">
+                    <figcaption class="text-center">
+                        Adauga o noua locatie
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+        <section id="edit-profile-page">
+            <h2>4. Edit profile page</h2>
+            <p>
+                Accesand aceasta pagina, utilizatorul are posibilitatea de a adauga abilitati, pe baza carora va primi notificari despre postarile altor utilizatori, care au cel putin o abilitate pe care acesta o detine.
+                In momentul in care este apasat butonul 'Add more abilities' se va adauga un nou camp pe care utilizatorul trebuie sa il completeze. La apasarea butonului 'Submit' informatiile introduse de catre utilizator vor fi salvate si ii vor fi asociate lui.
+            </p>
+            <div class="afterAndBefore">
+                <figure typeof="schema:image">
+                    <img class="img-width" alt="edit profile" class="webMarkup" src="./img/edit-profile.png">
+                    <figcaption class="text-center">
+                        Edit profile page
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="afterAndBefore">
+                <figure typeof="schema:image">
+                    <img class="img-width" alt="add abilities" class="webMarkup" src="./img/add-abilities.png">
+                    <figcaption class="text-center">
+                        Adauga mai multe abilitati
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+        <section id="top-locations-page">
+            <h2>5. Top locations page</h2>
+            <p>
+                Acesta pagina va contine locatiile cele mai vizitate, pe care le va prelua din baza de date, si le va afisa in mod dinamic.
+            </p>
+            <div class="afterAndBefore">
+                <figure typeof="schema:image">
+                    <img class="img-width" alt="top locations" class="webMarkup" src="./img/top-locations.png">
+                    <figcaption class="text-center">
+                        Top locations page
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+        <!-- <section id="demo_video">
+            <h2>9. Demo Video</h2>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/nvk5FSavvhI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </p>
+        </section> -->
+    </article>
+</body>
+
+</html>
