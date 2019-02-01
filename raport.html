@@ -27,6 +27,9 @@
                 <p role="doc-subtitle" property="schema:alternateName">
                     6. Solutii de stocare disponibile la nivel de client
                 </p>
+                <p role="doc-subtitle" property="schema:alternateName">
+                    7. Implementare
+                </p>
             </header>
             <meta property="schema:accessibilityFeature" content="alternativeText">
             <meta property="schema:accessibilityFeature" content="MathML">
@@ -339,6 +342,45 @@
                             face acelasi lucru pe care il face Session Storage cu diferenta ca stocarea datelor persista chiar si dupa
                             ce browserul a fost inchis si redeschis. Vom utiliza Local Storage pentru a stoca paginile aplicatiei.
                     </span>                          
+                </header>
+                <meta property="schema:accessibilityFeature" content="alternativeText">
+                <meta property="schema:accessibilityFeature" content="MathML">
+                <meta property="schema:accessibilityHazard" content="noFlashingHazard">
+            </article>
+        </section>
+        <section typeof="sa:AuthorsList">
+            <h3>7. Implementarea</h3>
+            <article resource="#" typeof="schema:ScholarlyArticle">
+                <header>
+                    <h5>Chat</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                            Aplicatia permite initierea unei conversatii intre doi utilizatori. Pentru implementarea acestei functionalitati am folosit un server care are rolul de a prelua mesajele de la un utilizator si de a-l trimite catre alt utilizator. Mesajele sunt trimise de la client catre server folosind websockets. Un utilizator poate sa poarte mai multe conversatii simultan
+                    </span>  
+                    <h5>Logarea</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                            Logarea este implementata folosind Facebook API. Atunci cand un utilizator se logheaza se salveaza in variabile cookie id-ul utilizatorului si numele acestuia. Aceste variabile sunt folosite pentru a testa daca utilizatorul este logat si pentru a identifica utilizatorul in mod unic.
+                    </span>   
+                    <h5>Adaugarea postarilor si a locatiilor</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                            Adaugarea postarilor si a locatiilor a fost realizata folosind tehnologii AJAX. Utilizatorul trimite informatii din formular pin ajax catre o pagina PHP, care insereaza inforamtiile intr-o baza de date. Utilizatorul are posibilitatea de a sterge o postare publicata de el. Acest lucru se realizeaza trimitand id-ul postarii catre o pagina php care este responsabila de a sterge postarea din baza de date.
+                    </span>   
+                    <h5>Notificari</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                            Notificarile sunt afisate pentru 10 secunde numai pentru utilizatorii care au macar o abilitate in comun cu utilizatorul care a postat. Pentru a le afisa pe ecran ne folosim de AJAX pentru a modifica continutul unei diviziuni. Functia pentru notificari este apelata la un interval regulat.
+                    </span>   
+                    <h5>Service Workers</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                     		Aplicatia ofera si posibilitatea de a lucra offline. Ne folosim de service workers pentru a salva pagina in memoria locala. Sunt salvate numai paginile care au fost accesate pana in momentul in care conexiunea este intrerupta.
+                    </span>   
+                     <h5>Top Location</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                     		Pentru a afisa cele mai populare locatii ne folosim de o interogare a bazei de date care este facuta de o pagina php, care trimite rezultatul prin ajax catre pagina top locations.
+                    </span>                     
+                    <span>
+                    	 <h5>Testarea proiectului</h5>
+                    <span role="doc-acknowledgments" property="schema:alternateName">
+                     		Aplicatia ofera utilizatorului mai multe functionalitati conectate intre ele. Intrucat aplicatia este client-side, functionalitatile pot fi modificate de un utilizator care are intentii rele. Am incercat sa prevenim acest lucru conectand cod de javascript cu cod de php pentru a proteja paginile la care utilizatorul nu ar trebui sa aiba acces daca nu este logat. In consola se observa cateva erori. Acestea sunt generate fie de Facebook API, fie de Service Workers, dar ele sunt cauzate de faptul ca nu folosim HTTPS.
+                    </span>
                 </header>
                 <meta property="schema:accessibilityFeature" content="alternativeText">
                 <meta property="schema:accessibilityFeature" content="MathML">
