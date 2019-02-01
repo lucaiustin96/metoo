@@ -132,4 +132,7 @@ p.issue {
 .text-center {
   text-align: center;
 }
+.width-600 {
+  width: 600px;
+}
 
